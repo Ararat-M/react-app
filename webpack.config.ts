@@ -1,16 +1,16 @@
 import path from "path";
-import webpack from "webpack";
+import { Configuration } from "webpack";
 import 'webpack-dev-server';
 import buildLoaders from "./config/build/buildLoaders";
 import buildPlugins from "./config/build/buildPlugins";
 import buildResolve from "./config/build/buildResolve";
 import buildDevServer from "./config/build/buildDevServer";
 
-export default (env: Record<string, any>): webpack.Configuration => {
+export default (env: Record<string, any>): Configuration => {
   const mode = env.mode || "development";
   const isDev = mode === "development";
   
-  const config: webpack.Configuration = {
+  const config: Configuration = {
     mode,
     entry: "./src/index.tsx",
     output: {
