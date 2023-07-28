@@ -2,6 +2,7 @@ import "app/styles/index.scss"
 import { useTheme } from "app/providers/themeProvider";
 import { AppRouter } from "app/providers/router";
 import { Navbar } from "widgets/Navbar";
+import { Button, ButtonTheme } from "shared/ui/Button/Button";
 
 export function App() {
   const [theme, toogleTheme] = useTheme();
@@ -15,7 +16,6 @@ export function App() {
       </div>
       <div className="container">
         <AppRouter />
-        <button onClick={toogleTheme}>toogle</button>
       </div>
     </div>
   )
