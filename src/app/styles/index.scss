@@ -5,9 +5,20 @@
 
 .app {
   font: var(--font-l);
-
-  background-color: var(--bg-color);
+  
+  background-color: var(--bg-app-color);
+  background-image: var(--bg-app-image);
+  
   color: var(--primary-color);
-
+  
   min-height: 100vh;
+}
+
+.container {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+}
+
+.header {
+  background-color: var(--bg-navbar-color);
 }
