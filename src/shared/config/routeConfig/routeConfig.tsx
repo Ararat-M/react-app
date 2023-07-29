@@ -9,7 +9,7 @@ enum AppRoutes {
 const RoutePath: Record<AppRoutes, string> = {
   [AppRoutes.MAIN]: "/",
   [AppRoutes.ABOUT]: "/about"
-}
+};
 
 interface IRouteProps {
   path: string;
@@ -28,4 +28,4 @@ export const routeConfig: Record<AppRoutes, IRouteProps> = {
     element: <AboutPage />,
     title: "О нас"
   }
-}
+};

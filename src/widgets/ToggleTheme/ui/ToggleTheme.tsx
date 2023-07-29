@@ -6,11 +6,11 @@ import { classNames } from "shared/lib/classNames/classNames";
 import { Button, ButtonTheme } from "shared/ui/Button/Button";
 
 export function ToggleTheme() {
-  const [theme, toggleTheme] = useTheme()
+  const [theme, toggleTheme] = useTheme();
 
   return (
     <Button theme={ButtonTheme.CLEAR} onClick={toggleTheme} className={classNames(classes.btn)}>
-      {theme === Theme.DARK 
+      {theme === Theme.DARK
         ? <DarkThemeIcon />
         : <LightThemeIcon />}
     </Button>

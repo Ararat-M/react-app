@@ -1,4 +1,4 @@
-import type { Configuration as DevServerConfiguration } from 'webpack-dev-server';
+import type { Configuration as DevServerConfiguration } from "webpack-dev-server";
 
 export default function buildDevServer(): DevServerConfiguration {
   return {
@@ -6,5 +6,5 @@ export default function buildDevServer(): DevServerConfiguration {
     open: true,
     historyApiFallback: true,
     hot: true
-  }
+  };
 }

@@ -1,11 +1,10 @@
-import "app/styles/index.scss"
+import "app/styles/index.scss";
 import { useTheme } from "app/providers/themeProvider";
 import { AppRouter } from "app/providers/router";
 import { Navbar } from "widgets/Navbar";
-import { Button, ButtonTheme } from "shared/ui/Button/Button";
 
 export function App() {
-  const [theme, toogleTheme] = useTheme();
+  const [theme] = useTheme();
 
   return (
     <div className={`app ${theme}`}>
@@ -18,5 +17,5 @@ export function App() {
         <AppRouter />
       </div>
     </div>
-  )
+  );
 }

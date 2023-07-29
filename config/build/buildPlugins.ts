@@ -1,4 +1,4 @@
-import { WebpackPluginInstance, ProgressPlugin, HotModuleReplacementPlugin} from "webpack";
+import { type WebpackPluginInstance, ProgressPlugin, HotModuleReplacementPlugin } from "webpack";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import ReactRefreshWebpackPlugin from "@pmmmwh/react-refresh-webpack-plugin";
@@ -6,16 +6,16 @@ import ReactRefreshWebpackPlugin from "@pmmmwh/react-refresh-webpack-plugin";
 export default function buildPlugins(isDev: boolean): WebpackPluginInstance[] {
   const plugins = [
     new HtmlWebpackPlugin({
-      template: './public/index.html' 
+      template: "./public/index.html"
     }),
     new ProgressPlugin(),
     new MiniCssExtractPlugin()
-  ]
+  ];
 
-  if (isDev){
+  if (isDev) {
     plugins.push(new ReactRefreshWebpackPlugin());
     plugins.push(new HotModuleReplacementPlugin());
   }
 
-  return plugins
+  return plugins;
 }
