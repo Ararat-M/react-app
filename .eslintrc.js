@@ -3,6 +3,7 @@ module.exports = {
         "browser": true,
         "es2021": true
     },
+    "ignorePatterns": ['.eslintrc.js'],
     "extends": [
         "standard-with-typescript",
         "plugin:react/recommended"
@@ -26,7 +27,7 @@ module.exports = {
         "project": ["./tsconfig.json"]
     },
     "plugins": [
-        "react"
+        "react",
     ],
     "rules": {
         "react/jsx-indent": [2, 2],

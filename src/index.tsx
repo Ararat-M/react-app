@@ -4,11 +4,14 @@ import { ThemeProvider } from "./app/providers/themeProvider/ui/ThemeProvider";
 import { BrowserRouter } from "react-router-dom";
 
 // Render your React component instead
-const root = createRoot(document.getElementById("root"));
-root.render(
-  <ThemeProvider>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </ThemeProvider>
-);
+const rootNode = document.getElementById("root");
+if (rootNode != null) {
+  const root = createRoot(rootNode);
+  root.render(
+    <ThemeProvider>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </ThemeProvider>
+  );
+}
