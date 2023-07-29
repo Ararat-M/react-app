@@ -22,7 +22,7 @@ export default (env: Record<string, any>): Configuration => {
       rules: buildLoaders(isDev),
     },
     resolve: buildResolve(),
-    plugins: buildPlugins(),
+    plugins: buildPlugins(isDev),
     devtool: isDev ? 'inline-source-map' : undefined,
     devServer: isDev ? buildDevServer() : undefined,
   }
