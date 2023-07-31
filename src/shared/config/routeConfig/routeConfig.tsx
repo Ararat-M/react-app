@@ -1,20 +1,23 @@
 import { AboutPage } from "pages/aboutPage";
 import { MainPage } from "pages/mainPage";
+import { NotFoundPage } from "pages/notFoundPage";
 
 enum AppRoutes {
   MAIN = "main",
-  ABOUT = "about"
+  ABOUT = "about",
+  NOT_FOUND = "not_found"
 }
 
 const RoutePath: Record<AppRoutes, string> = {
   [AppRoutes.MAIN]: "/",
-  [AppRoutes.ABOUT]: "/about"
+  [AppRoutes.ABOUT]: "/about",
+  [AppRoutes.NOT_FOUND]: "*"
 };
 
 interface IRouteProps {
   path: string;
   element: JSX.Element;
-  title: string;
+  title?: string;
 }
 
 export const routeConfig: Record<AppRoutes, IRouteProps> = {
@@ -27,5 +30,9 @@ export const routeConfig: Record<AppRoutes, IRouteProps> = {
     path: RoutePath.about,
     element: <AboutPage />,
     title: "О нас"
+  },
+  [AppRoutes.NOT_FOUND]: {
+    path: RoutePath.not_found,
+    element: <NotFoundPage />
   }
 };

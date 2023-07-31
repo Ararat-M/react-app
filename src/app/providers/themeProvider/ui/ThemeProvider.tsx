@@ -5,7 +5,7 @@ interface IThemeProvider {
   children?: ReactNode;
 }
 
-const defaultTheme = localStorage.getItem(THEME_LOCAL_STORAGE_KEY) as Theme || Theme.LIGHT;
+const defaultTheme = localStorage.getItem(THEME_LOCAL_STORAGE_KEY) as Theme ?? Theme.LIGHT;
 
 export function ThemeProvider({ children }: IThemeProvider) {
   const [theme, setTheme] = useState<Theme>(defaultTheme);

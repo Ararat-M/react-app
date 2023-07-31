@@ -15,7 +15,7 @@ interface IButton extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 export function Button({ children, className = "", theme = ButtonTheme.DEFAULT, ...props }: IButton) {
   return (
-    <button className={classNames(classes.default, {}, [className, classes[theme]])} {...props}>
+    <button className={classNames(classes.default, [className, classes[theme]])} {...props}>
       {children}
     </button>
   );
