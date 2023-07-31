@@ -2,6 +2,7 @@ import { type WebpackPluginInstance, ProgressPlugin, HotModuleReplacementPlugin 
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import ReactRefreshWebpackPlugin from "@pmmmwh/react-refresh-webpack-plugin";
+import BundleAnalyzer from "webpack-bundle-analyzer";
 
 export default function buildPlugins(isDev: boolean): WebpackPluginInstance[] {
   const plugins = [
@@ -9,7 +10,10 @@ export default function buildPlugins(isDev: boolean): WebpackPluginInstance[] {
       template: "./public/index.html"
     }),
     new ProgressPlugin(),
-    new MiniCssExtractPlugin()
+    new MiniCssExtractPlugin(),
+    new BundleAnalyzer.BundleAnalyzerPlugin({
+      openAnalyzer: false
+    })
   ];
 
   if (isDev) {
