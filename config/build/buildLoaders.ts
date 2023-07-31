@@ -2,6 +2,12 @@ import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import { type RuleSetRule } from "webpack";
 
 export default function buildLoaders(isDev: boolean): RuleSetRule[] {
+  const babelLoader = {
+    test: /\.(js|jsx|tsx|ts)$/,
+    exclude: /node_modules/,
+    use: ["babel-loader"]
+  };
+
   const fileLoader = {
     test: /\.(png|jpe?g|gif)$/i,
     use: [
@@ -44,6 +50,7 @@ export default function buildLoaders(isDev: boolean): RuleSetRule[] {
   return [
     fileLoader,
     svgLoader,
+    babelLoader,
     typeScriptLoader,
     sassLoader
   ];

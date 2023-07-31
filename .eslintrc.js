@@ -1,7 +1,8 @@
 module.exports = {
     "env": {
         "browser": true,
-        "es2021": true
+        "es2021": true,
+        "jest": true
     },
     "ignorePatterns": ['.eslintrc.js'],
     "extends": [
@@ -55,14 +56,15 @@ module.exports = {
         "@typescript-eslint/restrict-template-expressions": "warn",
         "@typescript-eslint/consistent-indexed-object-style": "warn",
         "@typescript-eslint/member-delimiter-style": ["error", {
-            multiline: {
-              delimiter: 'semi',
-              requireLast: true,
-            },
-            singleline: {
-              delimiter: 'semi',
-              requireLast: false,
-            },
-          }]
+        multiline: {
+            delimiter: 'semi',
+            requireLast: true,
+        },
+        singleline: {
+            delimiter: 'semi',
+            requireLast: false,
+        },
+        }],
+        "eol-last": "off"
     }
 }
