@@ -10,7 +10,8 @@ const config: Config = {
     "\\\\node_modules\\\\"
   ],
   moduleDirectories: [
-    "node_modules"
+    "node_modules",
+    "<rootDir>/src"
   ],
   moduleFileExtensions: [
     "js",
