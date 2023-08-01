@@ -1,11 +1,11 @@
 import { type Preview } from "@storybook/react";
-import '../../src/app/styles/index.scss';
+import "../../src/app/styles/index.scss";
 import { Theme } from "app/providers/themeProvider";
 import { ThemeDecorator } from "shared/config/storybookDecorator/ThemeDecorator";
 import { StyleDecorator } from "shared/config/storybookDecorator/StyleDecorator";
 
 const preview: Preview = {
-  decorators:  [
+  decorators: [
     StyleDecorator(),
     ThemeDecorator(Theme.LIGHT)
   ],
@@ -14,12 +14,10 @@ const preview: Preview = {
     controls: {
       matchers: {
         color: /(background|color)$/i,
-        date: /Date$/,
-      },
-    },
+        date: /Date$/
+      }
+    }
   }
 };
 
 export default preview;
-
-

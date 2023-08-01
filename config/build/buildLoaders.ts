@@ -22,7 +22,7 @@ export default function buildLoaders(isDev: boolean): RuleSetRule[] {
     use: ["@svgr/webpack"]
   };
 
-  const sassLoader = styleLoader(isDev)
+  const sassLoader = styleLoader(isDev);
 
   const typeScriptLoader: RuleSetRule = {
     test: /\.tsx?$/,

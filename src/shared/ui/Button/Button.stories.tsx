@@ -1,11 +1,11 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
-import { Button, ButtonTheme } from './Button';
-import { Theme } from 'app/providers/themeProvider';
-import { ThemeDecorator } from 'shared/config/storybookDecorator/ThemeDecorator';
+import { Button, ButtonTheme } from "./Button";
+import { Theme } from "app/providers/themeProvider";
+import { ThemeDecorator } from "shared/config/storybookDecorator/ThemeDecorator";
 
 const meta = {
-  title: 'shared/Button',
+  title: "shared/Button",
   component: Button
 } satisfies Meta<typeof Button>;
 
@@ -16,7 +16,7 @@ export const Default: Story = {
   args: {
     children: "text",
     theme: ButtonTheme.DEFAULT
-  },
+  }
 };
 
 export const Clear: Story = {
@@ -32,19 +32,19 @@ export const ClearDark: Story = {
     theme: ButtonTheme.CLEAR
   }
 };
-ClearDark.decorators= [ThemeDecorator(Theme.DARK)]
+ClearDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const Outline: Story = {
   args: {
     children: "text",
     theme: ButtonTheme.OUTLINE
-  },
+  }
 };
 
 export const OutlineDark: Story = {
   args: {
     children: "text",
     theme: ButtonTheme.OUTLINE
-  },
+  }
 };
-OutlineDark.decorators= [ThemeDecorator(Theme.DARK)]
+OutlineDark.decorators = [ThemeDecorator(Theme.DARK)];

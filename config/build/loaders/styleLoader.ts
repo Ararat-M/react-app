@@ -18,5 +18,5 @@ export const styleLoader = (isDev: boolean) => {
       },
       "sass-loader"
     ]
-  }
+  };
 };
