@@ -4,18 +4,15 @@
 @import "./themes/light";
 
 .app {
+  display: flex;
   font: var(--font-l);
   background-color: var(--bg-app-color);
   background-image: var(--bg-app-image);
   color: var(--primary-color);
   min-height: 100vh;
+  min-width: 100vw;
 }
 
-.container {
-  max-width: var(--content-max-width);
-  margin: 0 auto;
-}
-
-.header {
-  background-color: var(--bg-navbar-color);
+.content {
+  width: 100%;
 }
