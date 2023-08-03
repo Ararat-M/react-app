@@ -6,10 +6,10 @@ export enum Theme {
 }
 
 interface IThemeContext {
-  theme?: Theme;
+  theme: Theme;
   setTheme?: (theme: Theme) => void;
 }
 
-export const ThemeContext = createContext<IThemeContext>({});
+export const ThemeContext = createContext<IThemeContext>({ theme: Theme.LIGHT });
 
 export const THEME_LOCAL_STORAGE_KEY = "theme";
