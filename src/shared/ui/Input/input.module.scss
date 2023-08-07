@@ -1,0 +1,14 @@
+/* stylelint-disable rule-empty-line-before */
+.input {
+  padding: 4px 6px;
+  background-color: transparent;
+  border: 1px solid rgb(106 106 106 / 40%);
+  border-radius: 5px;
+  color: var(--secondary-color);
+
+    &::placeholder {
+      color: var(--secondary-color);
+      opacity: 0.5;
+      filter: saturate(0.8);
+    }
+}

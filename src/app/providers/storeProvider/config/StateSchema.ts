@@ -1,4 +1,4 @@
-import type { CounterSchema } from "features/Counter/model/types/CounterSchema";
+import type { CounterSchema } from "entities/Counter";
 
 export interface StateSchema {
   counter: CounterSchema;

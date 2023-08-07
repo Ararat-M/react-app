@@ -6,11 +6,12 @@ import ReactDOM from "react-dom";
 
 interface IModal {
   children?: ReactNode;
+  className?: string;
   isOpen: boolean;
   onClose: () => void;
 };
 
-export function Modal({ children, isOpen, onClose }: IModal) {
+export function Modal({ children, isOpen, onClose, className }: IModal) {
   const modalRoot = document.querySelector("body");
   if (modalRoot == null) return;
 
@@ -20,8 +21,12 @@ export function Modal({ children, isOpen, onClose }: IModal) {
     [classes.opened]: isOpen
   };
 
-  const additional: string[] = [
+  const modalAdditional: string[] = [
     theme
+  ];
+
+  const contentAdditional: string[] = [
+    className ?? ""
   ];
 
   function contentHandler(e: React.MouseEvent) {
@@ -30,9 +35,9 @@ export function Modal({ children, isOpen, onClose }: IModal) {
 
   return (
     ReactDOM.createPortal(
-      <div className={classNames(classes.modal, additional, mods)}>
+      <div className={classNames(classes.modal, modalAdditional, mods)}>
         <div className={classes.overlay} onClick={onClose}>
-          <div className={classes.content} onClick={contentHandler}>
+          <div className={classNames(classes.content, contentAdditional, mods)} onClick={contentHandler}>
             {children}
           </div>
         </div>
