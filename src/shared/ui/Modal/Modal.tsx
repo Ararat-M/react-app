@@ -4,14 +4,14 @@ import { classNames } from "shared/lib/classNames/classNames";
 import { useTheme } from "app/providers/themeProvider";
 import ReactDOM from "react-dom";
 
-interface IModal {
+interface ModalProps {
   children?: ReactNode;
   className?: string;
   isOpen: boolean;
   onClose: () => void;
 };
 
-export function Modal({ children, isOpen, onClose, className }: IModal) {
+export function Modal({ children, isOpen, onClose, className }: ModalProps) {
   const modalRoot = document.querySelector("body");
   if (modalRoot == null) return;
 
@@ -37,7 +37,7 @@ export function Modal({ children, isOpen, onClose, className }: IModal) {
     ReactDOM.createPortal(
       <div className={classNames(classes.modal, modalAdditional, mods)}>
         <div className={classes.overlay} onClick={onClose}>
-          <div className={classNames(classes.content, contentAdditional, mods)} onClick={contentHandler}>
+          <div className={classNames(classes.content, contentAdditional)} onClick={contentHandler}>
             {children}
           </div>
         </div>

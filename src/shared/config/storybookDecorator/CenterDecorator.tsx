@@ -4,7 +4,10 @@ import { type StoryFn } from "@storybook/react";
 export const CenterDecorator = () => (StoryComponent: StoryFn) => (
   <div style={
     {
-      margin: "auto auto"
+      height: "100vh",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center"
     }
   }>
     <StoryComponent />

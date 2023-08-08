@@ -3,11 +3,11 @@ import classes from "./appLink.module.scss";
 import { classNames } from "shared/lib/classNames/classNames";
 import { type ReactNode } from "react";
 
-interface IAppLink extends LinkProps {
+interface AppLinkProps extends LinkProps {
   children?: ReactNode;
 };
 
-export function AppLink({ to, children }: IAppLink) {
+export function AppLink({ to, children }: AppLinkProps) {
   return (
     <Link
       to={to}

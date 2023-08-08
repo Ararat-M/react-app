@@ -5,7 +5,10 @@ import { ThemeProvider } from "app/providers/themeProvider/ui/ThemeProvider";
 
 export const ThemeDecorator = (theme: Theme) => (StoryComponent: StoryFn) => (
   <ThemeProvider initialTheme={theme}>
-    <div className={`app ${theme}`}>
+    <div
+      style={{ display: "block" }}
+      className={`app ${theme}`}
+    >
       <StoryComponent />
     </div>
   </ThemeProvider>

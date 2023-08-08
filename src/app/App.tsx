@@ -11,7 +11,7 @@ export function App() {
       <div className={"sidebar"}>
         <Sidebar />
       </div>
-      <div className={"content"}>
+      <div>
         <Navbar />
         <AppRouter />
       </div>

@@ -1,7 +1,6 @@
 import classes from "./navbar.module.scss";
 import { classNames } from "shared/lib/classNames/classNames";
 import { Button, ButtonTheme } from "shared/ui/Button/Button";
-import { Modal } from "shared/ui/Modal/Modal";
 import { useState } from "react";
 import { AuthModal } from "features/AuthByUsername/ui/AuthModal/AuthModal";
 

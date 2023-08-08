@@ -8,13 +8,13 @@ export enum ButtonTheme {
   OUTLINE = "outline",
 }
 
-interface IButton extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children?: ReactNode;
   className?: string;
   theme?: ButtonTheme;
 };
 
-export function Button({ children, className = "", theme = ButtonTheme.DEFAULT, ...props }: IButton) {
+export function Button({ children, className = "", theme = ButtonTheme.DEFAULT, ...props }: ButtonProps) {
   return (
     <button className={classNames(classes[theme], [className])} {...props}>
       {children}

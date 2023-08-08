@@ -8,7 +8,7 @@ const meta = {
   title: "shared/Input",
   component: Input,
   args: {
-    placeholder: "Login"
+    placeholder: "placeholder"
   }
 } satisfies Meta<typeof Input>;
 
