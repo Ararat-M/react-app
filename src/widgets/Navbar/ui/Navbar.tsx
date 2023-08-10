@@ -2,7 +2,7 @@ import classes from "./navbar.module.scss";
 import { classNames } from "shared/lib/classNames/classNames";
 import { Button, ButtonTheme } from "shared/ui/Button/Button";
 import { useState } from "react";
-import { AuthModal } from "features/AuthByUsername/ui/AuthModal/AuthModal";
+import { AuthModal } from "features/AuthByUsername";
 
 export function Navbar() {
   const modalRoot = document.querySelector("body");

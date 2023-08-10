@@ -1,3 +1,3 @@
 import type { StateSchema } from "app/providers/storeProvider";
 
-export const getCounter = (state: StateSchema) => state.counter;
+export const getAuthState = (state: StateSchema) => state.auth;

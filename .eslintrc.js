@@ -48,6 +48,7 @@ module.exports = {
     "@typescript-eslint/no-unused-vars": "warn",
     "@typescript-eslint/restrict-template-expressions": "warn",
     "@typescript-eslint/consistent-indexed-object-style": "warn",
+    "@typescript-eslint/no-floating-promises": "warn",
     "@typescript-eslint/member-delimiter-style": ["error", {
       multiline: {
         delimiter: 'semi',

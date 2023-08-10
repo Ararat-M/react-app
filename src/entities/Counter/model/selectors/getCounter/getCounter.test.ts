@@ -1,5 +1,5 @@
 import type { DeepPartial } from "@reduxjs/toolkit";
-import type { StateSchema } from "app/providers/storeProvider/config/StateSchema";
+import type { StateSchema } from "app/providers/storeProvider";
 import { getCounter } from "./getCounter";
 
 describe("getCounter", () => {
