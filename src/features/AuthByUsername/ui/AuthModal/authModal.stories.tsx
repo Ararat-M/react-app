@@ -3,6 +3,7 @@ import { ThemeDecorator } from "shared/config/storybookDecorator/ThemeDecorator"
 import { CenterDecorator } from "shared/config/storybookDecorator/CenterDecorator";
 import { Theme } from "app/providers/themeProvider";
 import { AuthModal } from "./AuthModal";
+import { StateDecorator } from "shared/config/storybookDecorator/StateDecorator";
 
 const meta = {
   title: "features/AuthByUsername/AuthModal",
@@ -13,11 +14,13 @@ const meta = {
   }
 } satisfies Meta<typeof AuthModal>;
 
+const decorators = [StateDecorator(), CenterDecorator()];
+
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const AuthModalLight: Story = {};
-AuthModalLight.decorators = [CenterDecorator(), ThemeDecorator(Theme.LIGHT)];
+AuthModalLight.decorators = [...decorators, ThemeDecorator(Theme.LIGHT)];
 
 export const AuthModalDark: Story = {};
-AuthModalDark.decorators = [CenterDecorator(), ThemeDecorator(Theme.DARK)];
+AuthModalDark.decorators = [...decorators, ThemeDecorator(Theme.DARK)];

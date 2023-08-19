@@ -12,11 +12,20 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children?: ReactNode;
   className?: string;
   theme?: ButtonTheme;
+  disabled?: boolean;
 };
 
-export function Button({ children, className = "", theme = ButtonTheme.DEFAULT, ...props }: ButtonProps) {
+export function Button({ children, className = "", theme = ButtonTheme.DEFAULT, disabled = false, ...props }: ButtonProps) {
+  const mods = {
+    [classes.disabled]: disabled
+  };
+
   return (
-    <button className={classNames(classes[theme], [className])} {...props}>
+    <button
+      disabled={disabled}
+      className={classNames(classes[theme], [className], mods)}
+      {...props}
+    >
       {children}
     </button>
   );
