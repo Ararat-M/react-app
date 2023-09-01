@@ -5,7 +5,7 @@ interface TextProps {
   text: string;
   title?: string;
   textTheme?: TextTheme;
-};
+}
 
 export enum TextTheme {
   ERR = "error"
@@ -24,9 +24,7 @@ export function Text({ title, text, textTheme }: TextProps) {
     <>
       {title
         ? (
-          <p
-            className={classNames(classes.title, additionalClass)}
-          >
+          <p className={classNames(classes.title, additionalClass)}>
             {title}
           </p>)
         : null

@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { ThemeDecorator } from "shared/config/storybookDecorator/ThemeDecorator";
 import { CenterDecorator } from "shared/config/storybookDecorator/CenterDecorator";
 import { Theme } from "app/providers/themeProvider";
-import { AuthForm } from "./AuthForm";
+import AuthForm from "./AuthForm";
 import { StateDecorator } from "shared/config/storybookDecorator/StateDecorator";
 
 const meta = {

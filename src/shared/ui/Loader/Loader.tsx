@@ -7,4 +7,4 @@ export function Loader() {
       <div className={classNames(classes["lds-roller"])}><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
     </div>
   );
-};
+}

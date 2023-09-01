@@ -13,10 +13,10 @@ export default function buildPlugins(isDev: boolean): WebpackPluginInstance[] {
     new MiniCssExtractPlugin()
   ];
 
+  plugins.push(new BundleAnalyzer.BundleAnalyzerPlugin({
+    openAnalyzer: true
+  }));
   if (isDev) {
-    plugins.push(new BundleAnalyzer.BundleAnalyzerPlugin({
-      openAnalyzer: false
-    }));
     plugins.push(new ReactRefreshWebpackPlugin());
     plugins.push(new HotModuleReplacementPlugin());
   }

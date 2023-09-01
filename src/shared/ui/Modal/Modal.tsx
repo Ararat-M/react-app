@@ -9,7 +9,7 @@ interface ModalProps {
   className?: string;
   isOpen: boolean;
   onClose: () => void;
-};
+}
 
 export function Modal({ children, isOpen, onClose, className }: ModalProps) {
   const modalRoot = document.querySelector("body");
@@ -33,6 +33,8 @@ export function Modal({ children, isOpen, onClose, className }: ModalProps) {
     e.stopPropagation();
   }
 
+  if (!isOpen) return null;
+
   return (
     ReactDOM.createPortal(
       <div className={classNames(classes.modal, modalAdditional, mods)}>
@@ -42,7 +44,6 @@ export function Modal({ children, isOpen, onClose, className }: ModalProps) {
           </div>
         </div>
       </div>,
-      modalRoot
-    )
+      modalRoot)
   );
-};
+}
