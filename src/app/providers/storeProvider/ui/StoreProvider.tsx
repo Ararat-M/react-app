@@ -15,4 +15,4 @@ export function StoreProvider({ children, initialState }: IStoreProvider) {
       {children}
     </Provider>
   );
-};
+}

@@ -59,6 +59,7 @@ module.exports = {
         requireLast: false
       }
     }],
-    "eol-last": "off"
+    "eol-last": "off",
+    "@typescript-eslint/no-dynamic-delete": "off"
   }
 };

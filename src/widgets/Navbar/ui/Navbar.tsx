@@ -38,4 +38,4 @@ export function Navbar() {
       <AuthModal isOpen={isOpen} onClose={modalClose} />
     </div>
   );
-};
+}

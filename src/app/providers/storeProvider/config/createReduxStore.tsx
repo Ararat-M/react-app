@@ -16,4 +16,4 @@ export function createReduxStore(initialState?: StateSchema) {
     devTools: true,
     preloadedState: initialState
   });
-};
+}

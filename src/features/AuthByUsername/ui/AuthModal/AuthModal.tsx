@@ -1,16 +1,19 @@
 import classes from "./authModal.module.scss";
 import { Modal } from "shared/ui/Modal/Modal";
-import { AuthForm } from "../AuthForm/AuthForm";
+import { AuthFormAsync } from "../AuthForm/AuthFormAsync";
+import { Suspense } from "react";
 
 interface AuthModalProps {
   isOpen: boolean;
   onClose: () => void;
-};
+}
 
 export function AuthModal({ isOpen, onClose }: AuthModalProps) {
   return (
     <Modal className={classes["auth-modal"]} isOpen={isOpen} onClose={onClose}>
-      <AuthForm />
+      <Suspense>
+        <AuthFormAsync />
+      </Suspense>
     </Modal>
   );
-};
+}

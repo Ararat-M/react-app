@@ -9,7 +9,7 @@ import { useAppSelector } from "shared/hooks/useAppSelector";
 import { useSelector } from "react-redux";
 import { Text, TextTheme } from "shared/ui/Text/Text";
 
-export function AuthForm() {
+export default function AuthForm() {
   const authData = useAppSelector(getAuthState);
   const dispatch = useAppDispatch();
   const { error, isLoading } = useSelector(getAuthState);
