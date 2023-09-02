@@ -8,6 +8,9 @@ import buildDevServer from "./config/build/buildDevServer";
 
 export default (env: Record<string, any>): Configuration => {
   const mode = env.mode || "development";
+  const bundleAnalyzer = env.bundleAnalyzer || "false";
+
+  const isAnalyze = bundleAnalyzer === "true";
   const isDev = mode === "development";
 
   const config: Configuration = {
@@ -22,7 +25,7 @@ export default (env: Record<string, any>): Configuration => {
       rules: buildLoaders(isDev)
     },
     resolve: buildResolve(),
-    plugins: buildPlugins(isDev),
+    plugins: buildPlugins(isDev, isAnalyze),
     devtool: isDev ? "inline-source-map" : undefined,
     devServer: isDev ? buildDevServer() : undefined
   };
