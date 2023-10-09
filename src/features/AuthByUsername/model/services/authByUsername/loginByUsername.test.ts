@@ -10,7 +10,11 @@ const mockedAxios = axios as jest.Mocked<typeof axios>;
 describe("services/loginByUsername", () => {
   const userData = { username: "admin", id: "1" };
 
-  test("fulfilled", async () => {
+  afterEach(() => {
+    jest.restoreAllMocks();
+  });
+
+  test("success", async () => {
     mockedAxios.post.mockReturnValue(Promise.resolve({ data: userData }));
 
     const asyncThunk = new TestAsyncThunk(loginByUsername);
@@ -19,18 +23,19 @@ describe("services/loginByUsername", () => {
     expect(mockedAxios.post).toHaveBeenCalled();
     expect(asyncThunk.dispatch).toHaveBeenCalledWith(userActions.setUserData(userData));
     expect(asyncThunk.dispatch).toHaveBeenCalledTimes(3);
+    expect(result.meta.requestStatus).toBe("fulfilled");
     expect(result.payload).toEqual(userData);
   });
 
   test("error login", async () => {
-    mockedAxios.post.mockReturnValue(Promise.resolve({ status: 404 }));
+    mockedAxios.post.mockReturnValue(Promise.resolve({ status: 403 }));
 
     const asyncThunk = new TestAsyncThunk(loginByUsername);
-    const result = await asyncThunk.callThunk({ username: "344", password: "3" });
+    const result = await asyncThunk.callThunk({ username: "1", password: "1" });
 
     expect(mockedAxios.post).toHaveBeenCalled();
     expect(asyncThunk.dispatch).not.toHaveBeenCalledWith(userActions.setUserData(userData));
     expect(asyncThunk.dispatch).toHaveBeenCalledTimes(2);
-    expect(result.payload).toBe("error");
+    expect(result.meta.requestStatus).toBe("rejected");
   });
 });

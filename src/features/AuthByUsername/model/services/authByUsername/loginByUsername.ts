@@ -24,7 +24,7 @@ export const loginByUsername = createAsyncThunk<UserSchema | undefined, IAuthDat
       thunkAPI.dispatch(userActions.setUserData(response.data));
       return response.data;
     } catch (error) {
-      return thunkAPI.rejectWithValue("error");
+      return thunkAPI.rejectWithValue(error.message);
     }
   }
 );
